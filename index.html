@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" href="./Assets/codingg.jpeg">
+    <link rel="stylesheet" href="styles.css">
+    <title>Digital Cookbook</title>
+</head>
+<body>
+    <div>
+        <div id="navbar">
+            <nav class="navbar navbar-expand-lg bg-secondary">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-white" href="index.html" onclick="handleRefresh()"><img width="35" height="35" src="https://img.icons8.com/ios/100/chef-hat.png" alt="chef-hat"/></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="index.html" onclick="handleRefresh()">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="Recipe.html">Recipes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="Desserts.html">Desserts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="Quick&Easy.html">Quick & Easy</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Categories
+                            </a>
+                            <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Seasonal_Recepies.html">Seasonal Recipes</a></li>
+                            <li><a class="dropdown-item" href="Healthy_Eating.html">Healthy Eating</a></li>
+                            <li><a class="dropdown-item" href="Gluten_Free.html">Gluten-Free</a></li>
+                            </ul>
+                        </li>
+                        </ul>
+                        <form class="d-flex" role="search" onsubmit="handleSearch(event)">
+                            <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-warning" type="submit">Search</button>
+                        </form>
+                    </div>
+                    </div>
+                </nav>
+        </div><br>
+        <h2 style="text-align: center;">Most Viewed Recepies:</h2><br>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="./Assets/cheese_Cake.jpg" class="card-img-top" alt="Recipe Cheesecake">
+                        <div class="card-body">
+                            <h5 class="card-title">Cheesecake</h5>
+                            <p class="card-text">A rich and creamy dessert that's perfect for special occasions.</p>
+                            <a href="Recipe.html" class="btn btn-primary">View Recipe</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="./Assets/glutenFree.jpg" class="card-img-top" alt="Recipe Gluten-Free">
+                        <div class="card-body">
+                            <h5 class="card-title">Gluten-Free Chocolate Cake</h5>
+                            <p class="card-text">A rich and decadent cake that's perfect for special occasions.</p>
+                            <a href="Recipe.html" class="btn btn-primary">View Recipe</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="./Assets/Grilled-Cheese-Sandwich-SQ.jpg" class="card-img-top" alt="Recipe Grilled Cheese Sandwich">
+                        <div class="card-body">
+                            <h5 class="card-title">Grilled Cheese Sandwich</h5>
+                            <p class="card-text">A comforting and classic sandwich that's perfect for lunch or dinner.</p>
+                            <a href="Recipe.html" class="btn btn-primary">View Recipe</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="./Assets/Pesto-Zucchini-Pasta-Prep-4.jpg" class="card-img-top" alt="Recipe Zucchini Noodles with Pesto">
+                        <div class="card-body">
+                            <h5 class="card-title">Zucchini Noodles with Pesto</h5>
+                            <p class="card-text">A light and refreshing alternative to traditional pasta, perfect for summer.</p>
+                            <a href="Recipe.html" class="btn btn-primary">View Recipe</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="./Assets/orangeCranberry.jpg" class="card-img-top" alt="Recipe Cranberry Orange Bread">
+                        <div class="card-body">
+                            <h5 class="card-title">Cranberry Orange Bread</h5>
+                            <p class="card-text">A sweet and tart bread that's great for breakfast or dessert.</p>
+                            <a href="Recipe.html" class="btn btn-primary">View Recipe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="svg-container">
+            <svg onclick="scrollToTop()" height="25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/>
+            </svg>
+        </div>
+        <footer class="bg-secondary text-white py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Contact Us</h5>
+                        <p>Email: <a style="color: white; text-decoration: none;" href="mailto:muhametmaliqi@icloud.com">muhametmaliqi@icloud.com</a></p>
+                        <p>Phone: +383 (0) - 48 - 260 - 269</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Navigate</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html" class="text-white">Home</a></li>
+                            <li><a href="Recipe.html" class="text-white">Recipes</a></li>
+                            <li><a href="Desserts.html" class="text-white">Desserts</a></li>
+                            <li><a href="Quick&Easy.html" class="text-white">Quick & Easy</a></li>
+                            <li><a href="Seasonal_Recepies.html" class="text-white">Seasonal Recipes</a></li>
+                            <li><a href="Healthy_Eating.html" class="text-white">Healthy Eating</a></li>
+                            <li><a href="Gluten_Free.html" class="text-white">Gluten Free</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <small>* COMING SOON! *</small>
+                        <h5>Newsletter</h5>
+                        <p>Subscribe to our newsletter for updates.</p>
+                        <form>
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-light" type="button" id="button-addon2">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

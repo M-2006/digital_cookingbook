@@ -1,0 +1,35 @@
+body{
+    background-color: #343a40de;
+}
+.card:nth-child(odd) {
+    background-color: #343a40; /* Dark color */
+    color: white;
+}
+
+.card:nth-child(even) {
+    background-color: #495057; /* Medium color */
+    color: white;
+}
+
+.card:nth-child(3n) {
+    background-color: #6c757d; /* Light color */
+    color: black;
+}
+.card{
+    box-shadow: 0 0 0 5px grey;
+}
+/* Add margin-bottom to every 2nd card in the row */
+.row .col-md-3:nth-child(1n) .card {
+    margin-bottom: 20px;
+}
+
+.svg-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    color: white
+}
+.dropdown-menu:hover{
+    background-color: rgba(255, 255, 255, 0.651);
+}

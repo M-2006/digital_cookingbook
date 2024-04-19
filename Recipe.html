@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" href="./Assets/codingg.jpeg">
+    <link rel="stylesheet" href="styles.css">
+    <title>Digital Cookbook | Recepies</title>
+</head>
+<body>
+    <div>
+        <div id="navbar">
+            <nav class="navbar navbar-expand-lg bg-secondary">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-white" href="index.html" onclick="handleRefresh()"><img width="35" height="35" src="https://img.icons8.com/ios/100/chef-hat.png" alt="chef-hat"/></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active text-white" aria-current="page" href="index.html" onclick="handleRefresh()">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="Recipe.html">Recipes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="Desserts.html">Desserts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="Quick&Easy.html">Quick & Easy</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Categories
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="Seasonal_Recepies.html">Seasonal Recipes</a></li>
+                                    <li><a class="dropdown-item" href="Healthy_Eating.html">Healthy Eating</a></li>
+                                    <li><a class="dropdown-item" href="Gluten_Free.html">Gluten-Free</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search" onsubmit="handleSearch(event)">
+                            <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-warning" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div><br>
+        <h2 style="text-align: center;">Recipes:</h2><br>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Cheesecake</h5>
+                            <p class="card-text">Ingredients:</p>
+                            <ul>
+                                <li>2 cups graham cracker crumbs</li>
+                                <li>1/2 cup unsalted butter, melted</li>
+                                <li>24 oz cream cheese, softened</li>
+                                <li>1 cup sugar</li>
+                                <li>1 tsp vanilla extract</li>
+                                <li>4 large eggs</li>
+                                <li>1 cup sour cream</li>
+                                <li>1/4 cup all-purpose flour</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="downloadRecipe('Cheesecake')">Download Recipe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Gluten-Free Chocolate Cake</h5>
+                            <p class="card-text">Ingredients:</p>
+                            <ul>
+                                <li>1 3/4 cups gluten-free all-purpose flour blend</li>
+                                <li>1 cup granulated sugar</li>
+                                <li>3/4 cup unsweetened cocoa powder</li>
+                                <li>1 1/2 teaspoons baking powder</li>
+                                <li>1 1/2 teaspoons baking soda</li>
+                                <li>1 teaspoon salt</li>
+                                <li>2 large eggs</li>
+                                <li>1 cup milk</li>
+                                <li>1/2 cup vegetable oil</li>
+                                <li>2 teaspoons vanilla extract</li>
+                                <li>1 cup boiling water</li>
+                                <li>Chocolate frosting (optional)</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="downloadRecipe('Gluten-Free Chocolate Cake')">Download Recipe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Grilled Cheese Sandwich</h5>
+                            <p class="card-text">Ingredients:</p>
+                            <ul>
+                                <li>2 slices of bread</li>
+                                <li>2 slices of cheese (such as cheddar or American)</li>
+                                <li>1-2 tablespoons of butter</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="downloadRecipe('Grilled Cheese Sandwich')">Download Recipe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Zucchini Noodles with Pesto</h5>
+                            <p class="card-text">Ingredients:</p>
+                            <ul>
+                                <li>2-3 medium zucchinis</li>
+                                <li>1/2 cup basil pesto</li>
+                                <li>1 tablespoon olive oil</li>
+                                <li>Salt and pepper to taste</li>
+                                <li>Grated Parmesan cheese (optional)</li>
+                                <li>Fresh basil leaves for garnish (optional)</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="downloadRecipe('Zucchini Noodles with Pesto')">Download Recipe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Cranberry Orange Bread</h5>
+                            <p class="card-text">Ingredients:</p>
+                            <ul>
+                                <li>2 cups all-purpose flour</li>
+                                <li>1 cup sugar</li>
+                                <li>1 1/2 teaspoons baking powder</li>
+                                <li>1/2 teaspoon baking soda</li>
+                                <li>1/2 teaspoon salt</li>
+                                <li>3/4 cup orange juice</li>
+                                <li>1/4 cup vegetable oil</li>
+                                <li>1 tablespoon grated orange zest</li>
+                                <li>1 egg, beaten</li>
+                                <li>1 1/2 cups fresh or frozen cranberries, coarsely chopped</li>
+                                <li>1/2 cup chopped nuts (optional)</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="downloadRecipe('Cranberry Orange Bread')">Download Recipe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Apple Pie</h5>
+                            <p class="card-text">Ingredients:</p>
+                            <ul>
+                                <li>6 cups peeled, cored, and sliced apples</li>
+                                <li>3/4 cup white sugar</li>
+                                <li>1 teaspoon ground cinnamon</li>
+                                <li>1/4 teaspoon ground nutmeg</li>
+                                <li>1/4 teaspoon salt</li>
+                                <li>1 tablespoon cornstarch</li>
+                                <li>1 tablespoon lemon juice</li>
+                                <li>1 recipe pastry for a 9-inch double crust pie</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="downloadRecipe('Apple Pie')">Download Recipe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Chicken Alfredo Pasta</h5>
+                            <p class="card-text">Ingredients:</p>
+                            <ul>
+                                <li>8 oz fettuccine pasta</li>
+                                <li>1/2 cup unsalted butter</li>
+                                <li>2 cloves garlic, minced</li>
+                                <li>1 cup heavy cream</li>
+                                <li>1 cup grated Parmesan cheese</li>
+                                <li>1/4 cup chopped fresh parsley</li>
+                                <li>Salt and pepper to taste</li>
+                                <li>2 cups cooked chicken breast, sliced</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="downloadRecipe('Chicken Alfredo Pasta')">Download Recipe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Caesar Salad</h5>
+                            <p class="card-text">Ingredients:</p>
+                            <ul>
+                                <li>1 head romaine lettuce, torn into bite-size pieces</li>
+                                <li>1/2 cup Caesar salad dressing</li>
+                                <li>1/4 cup grated Parmesan cheese</li>
+                                <li>1 cup croutons</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="downloadRecipe('Caesar Salad')">Download Recipe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Spaghetti Carbonara</h5>
+                            <p class="card-text">Ingredients:</p>
+                            <ul>
+                                <li>8 oz spaghetti</li>
+                                <li>4 oz pancetta or bacon, diced</li>
+                                <li>2 cloves garlic, minced</li>
+                                <li>2 large eggs</li>
+                                <li>1 cup grated Pecorino Romano cheese</li>
+                                <li>Salt and pepper to taste</li>
+                                <li>Chopped parsley for garnish</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="downloadRecipe('Spaghetti Carbonara')">Download Recipe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Beef Stir-Fry</h5>
+                            <p class="card-text">Ingredients:</p>
+                            <ul>
+                                <li>1 lb flank steak, thinly sliced</li>
+                                <li>2 tablespoons soy sauce</li>
+                                <li>1 tablespoon oyster sauce</li>
+                                <li>1 tablespoon hoisin sauce</li>
+                                <li>1 tablespoon cornstarch</li>
+                                <li>2 tablespoons vegetable oil</li>
+                                <li>1 onion, sliced</li>
+                                <li>1 bell pepper, sliced</li>
+                                <li>1 cup broccoli florets</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="downloadRecipe('Beef Stir-Fry')">Download Recipe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Chocolate Chip Cookies</h5>
+                            <p class="card-text">Ingredients:</p>
+                            <ul>
+                                <li>1 cup unsalted butter, softened</li>
+                                <li>1 cup white sugar</li>
+                                <li>1 cup packed brown sugar</li>
+                                <li>2 large eggs</li>
+                                <li>1 teaspoon vanilla extract</li>
+                                <li>3 cups all-purpose flour</li>
+                                <li>1 teaspoon baking soda</li>
+                                <li>2 teaspoons hot water</li>
+                                <li>1/2 teaspoon salt</li>
+                                <li>2 cups semisweet chocolate chips</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="downloadRecipe('Chocolate Chip Cookies')">Download Recipe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Tacos</h5>
+                            <p class="card-text">Ingredients:</p>
+                            <ul>
+                                <li>1 lb ground beef</li>
+                                <li>1 packet taco seasoning mix</li>
+                                <li>1/2 cup water</li>
+                                <li>8 taco shells</li>
+                                <li>1 cup shredded lettuce</li>
+                                <li>1 cup shredded cheddar cheese</li>
+                                <li>1/2 cup diced tomatoes</li>
+                                <li>1/4 cup diced onions</li>
+                                <li>1/4 cup sour cream</li>
+                            </ul>
+                            <button class="btn btn-primary" onclick="downloadRecipe('Tacos')">Download Recipe</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more recipes here -->
+            </div>
+        </div>
+        <div class="svg-container">
+            <svg onclick="scrollToTop()" height="25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/>
+            </svg>
+        </div>
+        <footer class="bg-secondary text-white py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Contact Us</h5>
+                        <p>Email: <a style="color: white; text-decoration: none;" href="mailto:muhametmaliqi@icloud.com">muhametmaliqi@icloud.com</a></p>
+                        <p>Phone: +383 (0) - 48 - 260 - 269</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Navigate</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html" class="text-white">Home</a></li>
+                            <li><a href="Recipe.html" class="text-white">Recipes</a></li>
+                            <li><a href="Desserts.html" class="text-white">Desserts</a></li>
+                            <li><a href="Quick&Easy.html" class="text-white">Quick & Easy</a></li>
+                            <li><a href="Seasonal_Recepies.html" class="text-white">Seasonal Recipes</a></li>
+                            <li><a href="Healthy_Eating.html" class="text-white">Healthy Eating</a></li>
+                            <li><a href="Gluten_Free.html" class="text-white">Gluten Free</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <small>* COMING SOON! *</small>
+                        <h5>Newsletter</h5>
+                        <p>Subscribe to our newsletter for updates.</p>
+                        <form>
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-light" type="button" id="button-addon2">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
